@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #b72424;
+  background: radial-gradient(ellipse at center, #b72424 0%, #492727 100%);
+}
+
+.tree {
+  animation: spin 18s infinite linear;
+  transform-origin: 50% 0;
+}
+
+@keyframes spin {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.tree * {
+  position: absolute;
+  transform-origin: 0 0;
+}
+
+.tree input[type="text"],
+.tree button,
+.tree select {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 3px;
+  padding: 3px 8px;
+  color: #333;
+  font-size: 12px;
+}
+
+.tree-element {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3px 8px;
+  border-radius: 3px;
+  color: #333;
+}
+
+.floating-emoji {
+  position: fixed;
+  pointer-events: none;
+  font-size: 24px;
+  transform: translate(-50%, -50%);
+  animation: floatAndFade 1s ease-out forwards;
+  z-index: 1000;
+  text-shadow: 0 0 10px rgba(255, 182, 193, 0.8);
+  will-change: transform, opacity;
+}
+
+@keyframes floatAndFade {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.3) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
